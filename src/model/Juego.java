@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class Juego {
 
     private NumeroSecreto numeroSecreto;
@@ -10,9 +12,9 @@ public class Juego {
     int intentosRestantes;
 
     public void setRangoDelNumeroSecreto(int limiteInferior, int limiteSuperior) {
-        this.limiteInferior = limiteInferior;
-        this.limiteSuperior = limiteSuperior;
-        numeroSecreto.setRango(this.limiteInferior, this.limiteSuperior);
+       // this.limiteInferior = limiteInferior;
+       // this.limiteSuperior = limiteSuperior;
+        numeroSecreto.setRango(limiteInferior, limiteSuperior);
     }
 
     public Juego(int limiteInferior, int limiteSuperior, int intentos) {
@@ -28,9 +30,21 @@ public class Juego {
     }
 
     public boolean esElNumeroSecreto(int numero) {
+        
+        boolean ns;
+        if(numeroSecreto.esIgual(numero)== false){
+        ns = numeroSecreto.esIgual(numero);
         this.intentosRealisados++;
+        }
+ 
         return numeroSecreto.esIgual(numero);
     }
+    
+    
+     public int getNumeroSecreto() {
+        return this.numeroSecreto.getNumeroSecreto();
+    }
+
 
     public boolean puedeIntentarDeNuevo() {
         boolean hayMasOportunidades = this.intentosRestantes() > 0;
@@ -38,8 +52,8 @@ public class Juego {
     }
 
     public int intentosRestantes() {
-        int numeroDeIntentosRestantes = this.intentosRestantes - this.intentosRealisados;
-        return (numeroDeIntentosRestantes);
+        this.intentosRestantes = this.numeroDeIntentos - this.intentosRealisados;
+        return (this.intentosRestantes);
     }
 
     public String getTexoDeAyuda(int numero) {
@@ -52,8 +66,7 @@ public class Juego {
         return texto;
     }
 
-    public String getNumeroSecreto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
+   
 }
