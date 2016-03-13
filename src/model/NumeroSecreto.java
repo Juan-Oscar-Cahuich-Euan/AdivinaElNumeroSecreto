@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class NumeroSecreto {
 
-    private int Numero;
+    private int numero;
     private int limiteInferior;
     private int limiteSuperior;
     private Random generador;
@@ -23,7 +23,7 @@ public class NumeroSecreto {
     }
 
     public final void generar() {
-        this.Numero = generador.nextInt(limiteSuperior) + 1;
+        this.numero = generador.nextInt(limiteSuperior) + 1;
     }
 
     public NumeroSecreto(int limiteSuperior, int limiteInferior) {
@@ -31,34 +31,43 @@ public class NumeroSecreto {
         this.generador = new Random();
         this.generar();
     }
-public NumeroSecreto(){
-this(LIM_INF_PREDET,LIM_SUP_PREDET);
-}
-public int getNumeroSecreto(){
-return this.Numero;
-}
-public int getlimiteInferior(){
-return this.limiteInferior;
-}
-public int getlimiteSuperior(){
-return this.limiteSuperior;
-}
-public boolean esMayor(int Numero){
-boolean elNumeroSecretoEsMayor; if
-(this.Numero > Numero){
-   elNumeroSecretoEsMayor = true; }
-else{
-    elNumeroSecretoEsMayor = false;
-}
-return elNumeroSecretoEsMayor;
-}
 
-public boolean esIgual(int Numero){
-return(this.Numero== Numero);
-}
+    public NumeroSecreto() {
+        this(LIM_INF_PREDET, LIM_SUP_PREDET);
+    }
+
+    public int getNumeroSecreto() {
+        return this.numero;
+    }
+
+    public int getlimiteInferior() {
+        return this.limiteInferior;
+    }
+
+    public int getlimiteSuperior() {
+        return this.limiteSuperior;
+    }
+
+    public boolean esMayor(int numero) {
+        boolean elNumeroSecretoEsMayor;
+        if (this.numero > numero) {
+            elNumeroSecretoEsMayor = true;
+        } else {
+            elNumeroSecretoEsMayor = false;
+        }
+        return elNumeroSecretoEsMayor;
+    }
 
     boolean esMenor(int numero) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean elNumeroSecretoEsMenor = false;
+        if (this.numero < numero) {
+            elNumeroSecretoEsMenor = true;
+        }
+        return elNumeroSecretoEsMenor;
+    }
+
+    public boolean esIgual(int numero) {
+        return (this.numero == numero);
     }
 
 }
