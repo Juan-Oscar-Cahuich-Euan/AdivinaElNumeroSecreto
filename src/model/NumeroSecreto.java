@@ -57,4 +57,8 @@ public boolean esIgual(int Numero){
 return(this.Numero== Numero);
 }
 
+    boolean esMenor(int numero) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
