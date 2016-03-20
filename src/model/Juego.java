@@ -64,6 +64,7 @@ public class Juego {
             texto = "Menor";
         }
         return texto;
+        
     }
 
     

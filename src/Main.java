@@ -32,7 +32,7 @@ public class Main {
     }
     
   System.out.println("El número secreto es " + juego.getNumeroSecreto()); 
-            
+        System.out.println("");       
     
     }
 
